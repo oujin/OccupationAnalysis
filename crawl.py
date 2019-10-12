@@ -33,7 +33,6 @@ def get_abstract(keyword):
             res = sess.post(url, headers=headers, data=data, timeout=3000)
             data = json.loads(res.text, encoding='utf-8')
             abstract += data['content']['positionResult']['result']
-            break
             time.sleep(10)
     except:
         pass
