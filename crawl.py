@@ -82,6 +82,7 @@ def get_info(abstract_lists, filename):
         site = f'https://www.lagou.com/jobs/{positionId}.html'
         res = sess.get(site, headers=headers, timeout=5000)
         f.write(' '.join(data_list) + ' ')
+        # 直接存起来，需要用到的时候再提取信息处理
         f.write(
             res.text.replace(' ', '').replace('\r\n', '').replace('\n', ''))
         f.write('\n')
